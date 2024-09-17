@@ -39,6 +39,20 @@ int main()
         cout<<"Successfully bind to local port\n";
          
     }
+    nRet=listen(nSocket,5);  // here 5 means backlog i.e it can reciever up to 5 request at a time more than that will be in wait quqeue
+        if(nRet<0)
+        {
+            cout<<"Failed to listen to local port "<<endl;
+            exit(EXIT_FAILURE);
+        }
+        else
+        {
+            cout<<"Successfully listening to local port\n";
+            
+        }
+    
+
+
 
      WSACleanup();
     return 0;
